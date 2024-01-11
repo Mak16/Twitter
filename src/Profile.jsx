@@ -2,7 +2,7 @@ import Btn from "./Btn";
 function Profile(props) {
   return (
     <>
-      <div className="flex flex-row w-full pt-4">
+      <div className="flex flex-row w-full pt-4 border-b border-solid border-slate-800 pl-3 pr-3">
         <img className="w-10 h-10 self-start rounded-full " src={props.src} alt={props.alt} />
         <div className="flex flex-col ml-5 ">
           <textarea
