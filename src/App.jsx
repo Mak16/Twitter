@@ -1,9 +1,12 @@
 import "./App.css";
-import Menu from "./Menu";
-import Profile from "./Profile";
+import Menu from "./components/Menu";
+import Profile from "./assets/Profile";
 import "./App.css";
-import Btn from "./Btn";
-import Tweet from "./Tweet";
+import Btn from "./components/Btn";
+import Tweet from "./assets/Tweet";
+import Field from "./assets/Field";
+import UserProfil from "./components/UserProfil";
+Field;
 function App() {
   return (
     <>
@@ -39,12 +42,19 @@ function App() {
               <Btn btnClass=" bg-sky-500 w-40 h-10 text-white text-xs rounded-full mt-5 self-center">
                 Tweet
               </Btn>
-              <div className="flex flex-row mt-72"> 
-                <img
-                  className="w-10 h-10 self-start rounded-full "
+              <div className="flex flex-row">
+                <UserProfil
+                  verifiedSrc="src/assets/Verified.svg"
                   src="src/assets/IMG_7333.jpg"
-                  alt="Profil" />
-                  <h2 className="text-white flex flex-col ml-2">Makeda Banza <small className="text-white opacity-25">@Makban16</small></h2>
+                  userName="Makban16"
+                >
+                  Makeda Banza
+                </UserProfil>
+                <img
+                  className="w-4 mt-72 mb-4 ml-2"
+                  src="src/assets/More-2.svg"
+                  alt="More"
+                />
               </div>
             </div>
           </div>
@@ -82,7 +92,9 @@ function App() {
           ></Tweet>
         </div>
         <div className="w-1/5">
-          
+          <Field className="w-full bg-slate-800 rounded-full h-10 text-center resize-none ">
+            What’s happening
+          </Field>
         </div>
       </div>
     </>
