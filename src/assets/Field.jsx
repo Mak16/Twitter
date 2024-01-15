@@ -1,7 +1,6 @@
 function Field(props) {
   return (
     <>
-    className=""
       <div className={props.fieldcontenair} >
         {props.SearchImg && <img className="w-4" src={props.SearchImg} alt="" />}
         <textarea

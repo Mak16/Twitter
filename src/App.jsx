@@ -7,6 +7,7 @@ import Tweet from "./assets/Tweet";
 import Field from "./assets/Field";
 import UserProfil from "./components/UserProfil";
 import Trends from "./components/Trends";
+import Squid from "./components/Squid";
 Field;
 function App() {
   let tabs = [
@@ -129,7 +130,7 @@ function App() {
 
   return (
     <>
-      <div className=" w-screen m-auto justify-center flex  ">
+      <div className=" w-full m-auto justify-center flex  ">
         <div className="w-1/5">
           <div className="fixed ml-24">
             <Menu src="src/assets/Twitter.svg" alt="Twitter" />
@@ -192,12 +193,21 @@ function App() {
             tabs.map((tab) => <Tweet tweet={tab}/>)
           }
         </div>
-        <div className="w-1/5">
-          <Field fieldcontenair="flex flex-row  bg-slate-800 rounded-full p-2 justify-center" SearchImg="src/assets/Search.svg" className="w-full bg-slate-800 rounded-full  text-center resize-none ">
+        <div className="w-1/5 pl-3">
+          <div className="fixed w-1/5">
+          <Field fieldcontenair="flex flex-row bg-slate-800 rounded-full p-2 justify-center" SearchImg="src/assets/Search.svg" className="w-full bg-slate-800 rounded-full  text-center resize-none ">
             What’s happening
           </Field>
-          <Trends title="Trends for you" src="src/assets/Settings.svg"></Trends>
-          <Trends title="Who to follow" ></Trends>
+          <Trends title="Trends for you" src="src/assets/Settings.svg"> 
+          <Squid title="Trending in Turkey" subTitle="2,066 Tweets" />
+          <Squid title="Trending in Turkey" subTitle="2,066 Tweets" />
+          <Squid title="Trending in Turkey" subTitle="2,066 Tweets" />
+          <Squid title="Trending in Turkey" subTitle="2,066 Tweets" />
+          </Trends>
+          <Trends title="Who to follow" >
+
+          </Trends>
+          </div>
         </div>
       </div>
     </>
