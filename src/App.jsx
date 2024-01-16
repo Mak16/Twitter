@@ -8,7 +8,7 @@ import Field from "./assets/Field";
 import UserProfil from "./components/UserProfil";
 import Trends from "./components/Trends";
 import Squid from "./components/Squid";
-Field;
+import Follow from "./components/Follow";
 function App() {
   let tabs = [
     {
@@ -198,14 +198,16 @@ function App() {
           <Field fieldcontenair="flex flex-row bg-slate-800 rounded-full p-2 justify-center" SearchImg="src/assets/Search.svg" className="w-full bg-slate-800 rounded-full  text-center resize-none ">
             What’s happening
           </Field>
-          <Trends title="Trends for you" src="src/assets/Settings.svg"> 
+          <Trends trendClassName="w-full flex flex-col justify-between bg-slate-800 rounded-lg mt-3 p-4" title="Trends for you" src="src/assets/Settings.svg"> 
           <Squid title="Trending in Turkey" subTitle="2,066 Tweets" />
           <Squid title="Trending in Turkey" subTitle="2,066 Tweets" />
           <Squid title="Trending in Turkey" subTitle="2,066 Tweets" />
           <Squid title="Trending in Turkey" subTitle="2,066 Tweets" />
           </Trends>
-          <Trends title="Who to follow" >
-
+          <Trends trendClassName="w-full flex flex-col bg-slate-800 rounded-lg mt-3 p-4 h-60 " title="Who to follow" >
+            <Follow src="src/assets/Profile-Fill.svg" userName="@NYT" verifiedSrc="src/assets/Verified.svg"  >New York Times</Follow>
+            <Follow src="src/assets/Profile-Fill.svg" userName="@NYT" verifiedSrc="src/assets/Verified.svg"  >New York Times</Follow>
+            <Follow src="src/assets/Profile-Fill.svg" userName="@NYT" verifiedSrc="src/assets/Verified.svg"  >New York Times</Follow>
           </Trends>
           </div>
         </div>
