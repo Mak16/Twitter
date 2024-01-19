@@ -1,6 +1,7 @@
 function TweetTitle(props) {
   return (
     <>
+    
       <div className="w-1/7 flex ">
         <h2 className="text-white flex flex-row ml-2">
           {props.children}

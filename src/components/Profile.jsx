@@ -1,5 +1,5 @@
-import Field from "./Field";
-import Btn from "../components/Btn";
+import Field from "../assets/Field";
+import Btn from "./Btn";
 function Profile(props) {
   return (
     <>
@@ -39,7 +39,6 @@ function Profile(props) {
           </div>
         </div>
       </div>
-      <div></div>
     </>
   );
 }
