@@ -7,7 +7,7 @@ function TweetTitle(props) {
           {props.children}
           <img className="w-4 self-start mt-1 ml-1" src="src/assets/Verified.svg" alt="Verified" />{" "}
         </h2>
-        <small className="text-white ml-1 mt-1">@Makban16 . 2h</small>
+        <small className="text-white ml-1 mt-1">{props.userName} . 2h</small>
       </div>
     </>
   );
