@@ -8,14 +8,16 @@ import axios from "axios";
 export default function TweetMap() {
   const [data,setData]=useState([])
   useEffect(() => {
-    axios.get("https://my-json-server.typicode.com/amare53/twiterdb/posts")
+    axios.get("http://localhost:9000/tweets")
       .then(response => {
         setData(response.data)
       })
       .catch(function (error) {
         console.log(error);
-      });
-  });
+      }
+      );
+  }, [data])
+
 
   return (
     <>
@@ -32,10 +34,10 @@ export default function TweetMap() {
       <div>
         <Profile src="src/assets/IMG_7333.jpg" alt="Profile" />
       </div>
-      {data.map((tweetTab) => (
-        <Tweet tweet={tweetTab} />
-      ))}
-      {/* {userTabs.map((array) => (
+      {
+      data.map((tweetTab) => (<Tweet tweet={tweetTab} />))}
+      {
+      /* {userTabs.map((array) => (
         <Tweet usersTweet={array} />
       ))} */}
 

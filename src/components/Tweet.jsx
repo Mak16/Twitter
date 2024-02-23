@@ -2,34 +2,26 @@
 import { Link } from "react-router-dom";
 import TweetTitle from "./Tweet-title";
 import ReactIcon from "./ReactIcon";
-import { useState } from "react";
-function Tweet({ tweet, usersTweet }) {
+import { useEffect, useState } from "react";
+import axios from "axios";
+function Tweet({ tweet}) {
   const [isLiked, setIsLiked] = useState(false);
-  const [count, setCount] = useState(0);
   function FavoritesCounter() {
     setIsLiked(!isLiked);
-    // setCount(count +(isLiked ? -1: 1))
-    // isLiked ? setCount(count - 1) : setCount(count + 1);
+   
   }
-  // let post={
-  //   "userId": 1,
-  //   "id": 1,
-  //   "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-  //   "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
-  //   "url": "https://via.placeholder.com/600/92c952",
-  //   "thumbnailUrl": "https://via.placeholder.com/150/92c952",
-  //   "like": 9122,
-  //   "repost": 10
-  // }
-  // let user={
-  //   "id": 1,
-  //   "name": "Aime Nzolo",
-  //   "username": "aimenzolo",
-  //   "email": "aime@kadea.co",
-  //   "profil": "https://pbs.twimg.com/profile_images/1136589142035521536/6Y2g5se__400x400.png",
-  //   "thumbnailProfil": "https://pbs.twimg.com/profile_images/1136589142035521536/6Y2g5se__400x400.png",
-  //   "Joined": "Joined October 2011"
-  // }
+  const [userData,setuserData]=useState([])
+  useEffect(() => {
+    axios.get(`http://localhost:9000/users/${tweet.userId}`)
+      .then(response => {
+        setuserData(response.userData)
+      })
+      .catch(function (error) {
+        console.log(error);
+      }
+      );
+  }, [userData])
+ 
   return (
     <>
       <div className="flex flex-row w-full pt-4 border-b border-solid border-slate-800 pl-3 pr-10">
