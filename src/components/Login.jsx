@@ -1,8 +1,22 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Btn from "./Btn";
+import { useState } from "react";
+import axios from "axios";
 
 const Login = () => {
+  const [email, setEmail]=useState();
+  const [password, setPassword]=useState();
+
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    axios.post("http://localhost:9000/login",{
+      email,
+      password
+    }).then((response)=>console.log(response)).catch((error)=>console.log(error));
+    Navigate('/')
+  }
+
   return (
     <div className="">
       <div className="grid grid-cols-2 w-[70%] m-auto gap-40 py-40">
@@ -24,17 +38,23 @@ const Login = () => {
         <h1 className="text-white text-7xl text-bold">
           ça se passe <br /> maintenant
         </h1>
-        <form className="flex flex-col" action="">
+        <form onSubmit={handleSubmit} className="flex flex-col" action="">
           <h2>Inscrivez-vous.</h2>
 
           <label className="text-white text-2xl mt-5" htmlFor="email">
             Email
           </label>
-          <input className="bg-white w-full rounded-[40px] h-[4rem] mt-3 pl-5" type="email" />
+          <input
+           className="bg-white w-full rounded-[40px] h-[4rem] mt-3 pl-5" 
+           type="email" 
+           onChange={(e)=>setEmail(e.target.value)} />
           <label className="text-white text-2xl mt-5" htmlFor="password">
             Password
           </label>
-          <input className="bg-white w-full h-[4rem] rounded-[40px] mt-3 pl-5" type="text" />
+          <input
+           className="bg-white w-full h-[4rem] rounded-[40px] mt-3 pl-5" 
+           type="text"
+           onChange={(e)=>setPassword(e.target.value)} />
 
           <Btn btnClass="text-white text-3xl bg-blue-500  w-full px-8 py-3 mt-10 rounded-[40px]">
             Se connecter
