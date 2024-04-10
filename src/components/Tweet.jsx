@@ -2,39 +2,45 @@
 import { Link } from "react-router-dom";
 import TweetTitle from "./Tweet-title";
 import ReactIcon from "./ReactIcon";
-import { useEffect, useState } from "react";
-import axios from "axios";
-function Tweet({ tweet}) {
+import {
+  // useEffect,
+  useState,
+} from "react";
+// import axios from "axios";
+function Tweet({ tweet }) {
   const [isLiked, setIsLiked] = useState(false);
   function FavoritesCounter() {
     setIsLiked(!isLiked);
-   
   }
-  const [userData,setuserData]=useState([])
-  useEffect(() => {
-    axios.get(`http://localhost:9000/users/${tweet.userId}`)
-      .then(response => {
-        setuserData(response.userData)
-      })
-      .catch(function (error) {
-        console.log(error);
-      }
-      );
-  }, [userData])
- 
+  // const [userData,setuserData]=useState([])
+  // useEffect(() => {
+  //   axios.get(`http://localhost:9000/users/${tweet.userId}`)
+  //     .then(response => {
+  //       setuserData(response.userData)
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     }
+  //     );
+  // }, [userData])
+
   return (
     <>
       <div className="flex flex-row w-full pt-4 border-b border-solid border-slate-800 pl-3 pr-10">
         <Link className="w-20 h-15" to="/TweetProfil ">
           <img
             className="w-full object-fill self-start rounded-full "
-            // src={usersTweet.profil}
-            // alt={props.alt}
+            // src={tweet.User.thumbnailProfil}
+            alt="profile"
           />
         </Link>
         <div>
           <div className="flex flex-col">
-            {/* <TweetTitle userName={usersTweet.username} >{usersTweet.name}</TweetTitle> */}
+            <TweetTitle
+            // userName={tweet.user.name}
+            >
+              {/* {tweet.User.email} */}
+            </TweetTitle>
             <p className="w-2/7 text-white text-xs m-2">{tweet.body}</p>
             <div className="w-4/7">
               {tweet.thumbnailUrl && (
@@ -76,7 +82,7 @@ function Tweet({ tweet}) {
               <ReactIcon
                 onClickReact={FavoritesCounter}
                 classReact="text-white text-xs opacity-50 mt-1 ml-1 hover:text-[#F00] hover:opacity-100"
-                react={(tweet.like*1)+1}
+                react={tweet.like * 1 + 1}
                 viewBoxIcon="0 0 512 512"
                 fill="fill-[#f00]"
               >

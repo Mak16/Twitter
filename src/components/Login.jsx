@@ -13,8 +13,14 @@ const Login = () => {
     axios.post("http://localhost:9000/login",{
       email,
       password
-    }).then((response)=>console.log(response)).catch((error)=>console.log(error));
-    Navigate('/')
+    })
+    .then((response)=>{
+      console.log(response)
+      if(response.data === "success"){
+        Navigate('/')
+      }
+    })
+    .catch((error)=>console.log(error));
   }
 
   return (
