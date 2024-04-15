@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import profile from "../assets/IMG_7333.jpg";
+import TimelineProp from "../assets/Timeline-Prop.svg";
 
 export default function TweetMap() {
   const [data, setData] = useState([]);
@@ -25,11 +26,7 @@ export default function TweetMap() {
         <Link to="/" className="text-white">
           Home
         </Link>
-        <img
-          className="w-4"
-          src="src/assets/Timeline-Prop.svg"
-          alt="Timeline"
-        />
+        <img className="w-4" src={TimelineProp} alt="Timeline" />
       </div>
       <div>
         <Profile src={profile} alt="Profile" />
