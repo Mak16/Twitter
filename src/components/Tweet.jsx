@@ -30,16 +30,14 @@ function Tweet({ tweet }) {
         <Link className="w-20 h-15" to="/TweetProfil ">
           <img
             className="w-full object-fill self-start rounded-full "
-            // src={tweet.User.thumbnailProfil}
+            src={tweet.user.thumbnailProfil}
             alt="profile"
           />
         </Link>
         <div>
           <div className="flex flex-col">
-            <TweetTitle
-            // userName={tweet.user.name}
-            >
-              {/* {tweet.User.email} */}
+            <TweetTitle userName={tweet.user.email}>
+              {tweet.user.name}
             </TweetTitle>
             <p className="w-2/7 text-white text-xs m-2">{tweet.body}</p>
             <div className="w-4/7">
