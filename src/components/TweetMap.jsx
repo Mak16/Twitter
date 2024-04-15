@@ -4,20 +4,20 @@ import Profile from "./Profile";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import profile from "../assets/IMG_7333.jpg";
 
 export default function TweetMap() {
-  const [data,setData]=useState([])
+  const [data, setData] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:9000/tweets")
-      .then(response => {
-        setData(response.data)
+    axios
+      .get("http://localhost:9000/tweets")
+      .then((response) => {
+        setData(response.data);
       })
       .catch(function (error) {
         console.log(error);
-      }
-      );
-  }, [data])
-
+      });
+  }, [data]);
 
   return (
     <>
@@ -32,15 +32,14 @@ export default function TweetMap() {
         />
       </div>
       <div>
-        <Profile src="src/assets/IMG_7333.jpg" alt="Profile" />
+        <Profile src={profile} alt="Profile" />
       </div>
-      {
-      data.map((tweetTab) => (<Tweet tweet={tweetTab} />))}
-      {
-      /* {userTabs.map((array) => (
+      {data.map((tweetTab) => (
+        <Tweet tweet={tweetTab} />
+      ))}
+      {/* {userTabs.map((array) => (
         <Tweet usersTweet={array} />
       ))} */}
-
     </>
   );
 }
