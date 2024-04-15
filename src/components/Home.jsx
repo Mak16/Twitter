@@ -17,7 +17,12 @@ import Bookmarks from "../assets/Bookmarks.svg";
 import Lists from "../assets/Lists.svg";
 import Profile from "../assets/Profile.svg";
 import More from "../assets/More.svg";
-
+import More2 from "../assets/More-2.svg";
+import verified from "../assets/Private.svg";
+import img from "../assets/IMG_7333.jpg";
+import img2 from "../assets/Profile-Fill.svg";
+import Settings from "../assets/Settings.svg";
+import Search from "../assets/Search.svg";
 const Home = () => {
   return (
     <div>
@@ -57,18 +62,14 @@ const Home = () => {
               </Btn>
               <div className="flex flex-row">
                 <UserProfil
-                  verifiedSrc="src/assets/Private.svg"
-                  src="src/assets/IMG_7333.jpg"
+                  verifiedSrc={verified}
+                  src={img}
                   userName="Makban16"
                 >
                   Makeda Banza
                 </UserProfil>
                 <Link to="/login">
-                  <img
-                    className="w-4 mt-72 mb-4 ml-2"
-                    src="src/assets/More-2.svg"
-                    alt="More"
-                  />
+                  <img className="w-4 mt-72 mb-4 ml-2" src={More2} alt="More" />
                 </Link>
               </div>
             </div>
@@ -84,7 +85,7 @@ const Home = () => {
           <div className="fixed w-1/5">
             <Field
               fieldcontenair="flex flex-row bg-slate-800 rounded-full p-2 justify-center"
-              SearchImg="src/assets/Search.svg"
+              SearchImg={Search}
               className="w-full bg-slate-800 rounded-full  text-center resize-none "
             >
               What’s happening
@@ -92,7 +93,7 @@ const Home = () => {
             <Trends
               trendClassName="w-full flex flex-col justify-between bg-slate-800 rounded-lg mt-3 p-4"
               title="Trends for you"
-              src="src/assets/Settings.svg"
+              src={Settings}
             >
               <Squid title="Trending in Turkey" subTitle="2,066 Tweets" />
               <Squid title="Trending in Turkey" subTitle="2,066 Tweets" />
@@ -103,25 +104,13 @@ const Home = () => {
               trendClassName="w-full flex flex-col bg-slate-800 rounded-lg mt-3 p-4 h-60 "
               title="Who to follow"
             >
-              <Follow
-                src="src/assets/Profile-Fill.svg"
-                userName="@NYT"
-                verifiedSrc="src/assets/Verified.svg"
-              >
+              <Follow src={img2} userName="@NYT" verifiedSrc={verified}>
                 New York Times
               </Follow>
-              <Follow
-                src="src/assets/Profile-Fill.svg"
-                userName="@NYT"
-                verifiedSrc="src/assets/Verified.svg"
-              >
+              <Follow src={img2} userName="@NYT" verifiedSrc={verified}>
                 New York Times
               </Follow>
-              <Follow
-                src="src/assets/Profile-Fill.svg"
-                userName="@NYT"
-                verifiedSrc="src/assets/Verified.svg"
-              >
+              <Follow src={img2} userName="@NYT" verifiedSrc={verified}>
                 New York Times
               </Follow>
             </Trends>
