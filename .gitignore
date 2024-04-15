@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 
 .src/Styled.jsx
+# Local Netlify folder
+.netlify
